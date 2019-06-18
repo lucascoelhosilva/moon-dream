@@ -20,10 +20,9 @@ public class Player : MonoBehaviour {
 
     void Movimentacao()
     {
-        verificaChao = Physics2D.Linecast(transform.position, chaoVerificador.position, 1 << LayerMask.NameToLayer("Chao"));
+        verificaChao = Physics2D.Linecast(transform.position, chaoVerificador.position, 1 << LayerMask.NameToLayer("chao"));
 
-
-        if (Input.GetAxisRaw("Horizontal") > 0)
+       if (Input.GetAxisRaw("Horizontal") > 0)
         {
             transform.Translate(Vector2.right * velocidade * Time.deltaTime);
             transform.eulerAngles = new Vector2(0, 0);
